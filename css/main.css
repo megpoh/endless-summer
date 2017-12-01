@@ -107,6 +107,22 @@ form {
 	top: 0;
 }
 
+#instructors-sect .col-5-6 {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: -1;
+}
+/*
+.flickity-viewport {
+	max-height: 300px !important;
+}
+*/
+
+.flickity-prev-next-button {
+	display: none;
+}
+
 #gallery {
 	position: absolute;
 	top: 0;
@@ -370,14 +386,13 @@ ul.tabs li.current{
 >>> 4.0 - Media 
 -------------------------------------------------------------- */
 
-#home {
+#home>div {
 	background: url(../img/header-image.png) no-repeat scroll center;
 	-moz-background-size: contain;
 	-webkit-background-size: contain;
 	-o-background-size: contain;
 	-ms-background-size: contain;
 	background-size: contain;
-    
 }	
 
 section:nth-of-type(3) ul {
@@ -411,33 +426,27 @@ section:nth-of-type(3) ul li a:hover {
 	background-position: 0 -25px;
 }
 
-/*GALLERY*/
-
-
-
-.carousel {
-  background: #EEE;
+#packages {
+	background: url(../img/background-blue.png) no-repeat scroll center;
+	-moz-background-size: cover;
+	-webkit-background-size: cover;
+	-o-background-size: cover;
+	-ms-background-size: cover;
+	background-size: cover;
 }
 
-.carousel-cell {
-  width: 66%;
-  height: 200px;
-  margin-right: 10px;
-  background: #8C8;
-  border-radius: 5px;
-  counter-increment: carousel-cell;
+footer {
+	background: url(../img/background-blue.png) no-repeat scroll center;
+	-moz-background-size: cover;
+	-webkit-background-size: cover;
+	-o-background-size: cover;
+	-ms-background-size: cover;
+	background-size: cover;
 }
 
-/* cell number */
-.carousel-cell:before {
-  display: block;
-  text-align: center;
-  content: counter(carousel-cell);
-  line-height: 200px;
-  font-size: 80px;
-  color: white;
+.img-responsive {
+	max-width: 100%;
 }
-
 
 
 
@@ -525,62 +534,43 @@ ul.tabs li.current {
 		width: 98%;
 	}
 	
-	
+
 /*--------------------------------------------------------------
 >>> TYPOGRAPHY:
 ----------------------------------------------------------------*/
-	
+
 	
 	nav ul li {
 		list-style: none;
 		display: inline-block;
 	}
 	
-	nav.col-5-12 {
-		width: 100%;
-	}
+
 	
 	#home .wrapper div:nth-child(2) div {
-		width: 100%;
 		text-align: right;
 	}
 	
 	#home .wrapper div:nth-child(3) div {
-		width: 100%;
 		text-align: center;
 	}
-	
-	input {
-		width: 100%;
-	}
-	
-	#services .col-1-6 {
-		width: 100%;
-	}
+
 	
 	#img-5-day {
 		display: none;
 	}
-	
-	#packages * {
-		width: 100%;
-	}
+
 	
 	#instructors header, #instructors header+p {
 		text-align: center;
 	}
-	
-	#instructors .col-1-2 {
-		width: 100%;
-	}
+
 	
 	section .col-1-2 {
-		width: 100%;
 		text-align: center;
 	}
 	
 	footer .col-1-12 {
-		width: 100%;
 		text-align: center;
 	}
 	
@@ -595,85 +585,15 @@ ul.tabs li.current {
 	
 	/*3.1 - Site Structure*/
 	
-	.col-1-3, .col-2-3 {
+	nav.col-5-12, #home .wrapper div:nth-child(2) div, input, #services .col-1-6, #packages *, #instructors .col-1-2, section .col-1-2, footer .col-1-12, .col-1-3, .col-2-3, .col-1-7, .col-1-12, .col-1-4 {
 		width: 100%;
 	}
 	
-	.col-3-4 {
-		width: 75%;
-	}
-
-	.col-1-6, .col-1-9 {
-		width: 33.33%;
-	}
-	
-	.col-5-6, .col-sm-2-3 {
-		width: 66.66%;
-	}
-	
-	.col-1-7, .col-1-12, .col-1-4, [class*='col-lg'] {
-		width: 100%;
-	}
-	
-	.col-1-8, .col-1-12 {
-		width: 25%;
-	}
-	
-	.col-1-10 {
-		width: 50%;
-	}
-	
-	.col-sm-1-3 {
-		width: 33.33%;
-	}
-	
-	.col-1-4 {
-		width: 35%;
-	}
-	
-	#about section {
-		width: 100%;
-	}
-	
-	footer p {
-		width: 42%;
-		margin-left: 108px;
-	}
-	
-	footer nav ul {
-		margin-top: 14px;
-	}
-	
-	#work, #about, footer {
-		padding: 50px 0;
-	}
-	
-	#work section, #about section {
-		margin-top: 25px;
-	}
-	
-	.center-block, #bg-image .col-3-4 {
-		width: 100%;
-	}
-	
-	#bg-image li:last-child {
-		padding-right: 0;
-	}
-	
-	header nav ul {
-		margin-top: 52px;
-	}
-	
-	header .col-3-4, footer .col-3-4 {
-		width: 65%;
-	}
-	
-	#bg-image ul {
-		margin-top: 0;
-	}
-	
-	header .col-3-4 {
-		padding-bottom: 0;
+	.container {
+	display: block;
+}
+	.tabs {
+		display: none;
 	}
 	
 /*--------------------------------------------------------------
@@ -686,6 +606,14 @@ ul.tabs li.current {
 	.carousel-cell {
     height: 400px;
   }
+	
+	.container img {
+		display: none;
+	}
+	
+	.tab-content {
+		display: block;
+	}
 	
 	
 	
