@@ -35,27 +35,90 @@
 	box-sizing: border-box;
 }
 
+body {
+	overflow-x: hidden;
+}
+
 /*--------------------------------------------------------------
 >>> TYPOGRAPHY:
 ----------------------------------------------------------------*/
 
 html {
 	font: 14px 'Open Sans', sans-serif;
+	color: #084771;
 }
 
 p {
 	font-size: 1rem;
 }
 
+#about h3 {
+	font-size: 1rem;
+}
+
+#home p {
+	color: #fff;
+}
+
+h1, h1+p {
+	text-align: right;
+}
+
+h1, h2, h3 {
+	text-transform: uppercase;
+}
+
+section:last-of-type h2 {
+	text-transform: capitalize;
+}
+
 /*1.1 - Headings*/
+
+
 
 /*1.2 - Buttons*/
 
+
+header li span {
+	overflow: hidden;
+	background-color: #f07c5e;
+	display: inline-block;
+}
+header li a {
+	opacity: 0;
+	padding: 10px;
+	color: #fff;
+	max-width: 0;
+	display: inline-block;
+	text-decoration: none;
+	transition: max-width 1s ease-out .1s, opacity 1s ease-out .1s, color;
+}
+
+header span:hover a {
+	opacity: 1;
+	max-width: 150px;
+	transition: max-width 1s ease-out .1s, opacity 1s ease-out .1s, color .2s;
+}
+
+
+
+
 /*1.3 - Lists*/
+
+#home nav li {
+	list-style: none;
+	margin: 8px;
+	
+}
+
 
 /*1.4 - Table*/
 
 /*1.5 - Form*/
+
+form label {
+	display: none;
+}
 
 /*--------------------------------------------------------------
 >>> 2.0 NAVIGATION MENUS:
@@ -85,6 +148,10 @@ p {
 	clear: both;
 }
 
+header .wrapper>div {
+	padding-top: 20px;
+}
+
 form {
 	display: inline;
 }
@@ -101,18 +168,36 @@ form {
 	top: 0;
 }
 
-#instructors-sect {
+#instructors .wrapper {
 	position: relative;
 	left: 0;
 	top: 0;
+	z-index: 1;
 }
 
-#instructors-sect .col-5-6 {
+#instructors .col-5-6 {
 	position: absolute;
 	top: 0;
 	right: 0;
 	z-index: -1;
 }
+
+#about p {
+	display: inline;
+}
+
+#about input {
+	width: 440px;
+}
+
+#about h3, nav ul {					/*--------------MARGIN TOP: 0;-------------*/
+	margin-top: 0;
+}
+
+
+    
+
+
 /*
 .flickity-viewport {
 	max-height: 300px !important;
@@ -151,9 +236,11 @@ form {
 	left: 0;
 }
 
-.container{
-	width: 800px;
-	margin: 0 auto;
+@media screen and (min-width: 480px) {
+	.container{
+		width: 800px;
+		margin: 0 auto;
+	}
 }
 
 ul.tabs{
@@ -193,6 +280,30 @@ ul.tabs li.current{
 	list-style: none;
 }
 
+
+						/* FLEX CODE */ 
+
+.flex {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+ 	overflow: hidden;
+}
+
+.flex [class*='col-'] {
+  flex: 1;
+}
+
+#instructors {
+	height: 500px;
+}
+
+						/* END FLEX CODE */ 
+
+
+[class*='col-']:last-of-type {
+  padding-right: 0;
+}
 
 
 
@@ -386,70 +497,111 @@ ul.tabs li.current{
 >>> 4.0 - Media 
 -------------------------------------------------------------- */
 
-#home>div {
-	background: url(../img/header-image.png) no-repeat scroll center;
-	-moz-background-size: contain;
-	-webkit-background-size: contain;
-	-o-background-size: contain;
-	-ms-background-size: contain;
-	background-size: contain;
+
+#home:after { /* TYPOGRAPHY  */
+	content: 'SUMMER';
+	color: #084771;
+	font-size: 15rem;
+	font-weight: 700;
+	position: absolute;
+	right: 420px;
+	bottom: -50px;
+	z-index: -2;
+}
+
+#home {
+	position: relative;
+	top: 0;
+	left: 0;
+	background: url(../img/header-image.svg) no-repeat center;
+	-moz-background-size: cover;
+	-webkit-background-size: cover;
+	-o-background-size: cover;
+	-ms-background-size: cover;
+	background-size: cover;
+	min-height: 700px;
 }	
 
-section:nth-of-type(3) ul {
+section:last-of-type ul {
 	list-style: none;
 	padding-left: 0;
 }
 
-section:nth-of-type(3) ul span {
+section:last-of-type ul span {
 	display: none;
 }
 
-section:nth-of-type(3) ul li {
+section:last-of-type ul li {
 	display: inline-block;
 }
 
-section:nth-of-type(3) ul li a {
+section:last-of-type ul li a {
 	width: 25px;
 	height: 25px;
 	display: inline-block;
 }
 
-section:nth-of-type(3) ul li:first-child a {
+section:last-of-type ul li:first-child a {
 	background: url(../img/icon-fb.png)
 }
 
-section:nth-of-type(3) ul li:last-child a {
+section:last-of-type ul li:last-child a {
 	background: url(../img/icon-instagram.png)
 }
 
-section:nth-of-type(3) ul li a:hover {
+section:last-of-type ul li a:hover {
 	background-position: 0 -25px;
 }
 
-#packages {
-	background: url(../img/background-blue.png) no-repeat scroll center;
-	-moz-background-size: cover;
-	-webkit-background-size: cover;
-	-o-background-size: cover;
-	-ms-background-size: cover;
-	background-size: cover;
-}
-
-footer {
-	background: url(../img/background-blue.png) no-repeat scroll center;
-	-moz-background-size: cover;
-	-webkit-background-size: cover;
-	-o-background-size: cover;
-	-ms-background-size: cover;
-	background-size: cover;
-}
 
 .img-responsive {
-	max-width: 100%;
+	width: 100%;
+}
+
+#packages:after { /* TYPOGRAPHY  */
+	content:"PA \A CKAGES" ;
+	white-space: pre;
+	color: #084771;
+	font-size: 15rem;
+	font-weight: 700;
+	line-height: 180px;
+	position: absolute;
+	left: 20px;
+	bottom: 430px;
+	z-index: -2;
 }
 
 
+#packages { /* BLUE BACKGROUND WAVE */
+	position: relative;
+	top: 0;
+	left: 0;
+	background: url(../img/background-blue.svg) no-repeat 200px 300px;
+	width: 100%;
+}
 
+#instructors {
+	background: url(../img/background-blue-bottom-01.svg) no-repeat;
+	-moz-background-size: cover;
+	-webkit-background-size: cover;
+	-o-background-size: cover;
+	-ms-background-size: cover;
+	background-size: cover;
+}
+
+#instructors:after { /* TYPOGRAPHY  */
+	content: "INSTRUCTORS";
+	color: #084771;
+	font-size: 15rem;
+	font-weight: 700;
+	position: absolute;
+	right: -930px;
+    bottom: -1630px;
+	z-index: -2;
+}
+
+
+	
 
 
 
@@ -471,6 +623,8 @@ footer {
 	float: none;
 }
 
+
+
 /*--------------------------------------------------------------
 >>> 7.0 FLEX:
 ----------------------------------------------------------------*/
@@ -482,10 +636,10 @@ footer {
  	overflow: hidden;
 }
 
-.bg-blue  {
+.bg-lght-blue {
   	flex: 1;
 	height: 100%;
-	background-color: blue;
+	background-color: #edf4fb;
 }
 
 ul.tabs {
@@ -585,7 +739,7 @@ ul.tabs li.current {
 	
 	/*3.1 - Site Structure*/
 	
-	nav.col-5-12, #home .wrapper div:nth-child(2) div, input, #services .col-1-6, #packages *, #instructors .col-1-2, section .col-1-2, footer .col-1-12, .col-1-3, .col-2-3, .col-1-7, .col-1-12, .col-1-4 {
+	nav.col-5-12, #home .wrapper div:nth-child(2) div, input, #services .col-1-6, #packages [class*="col-"], #instructors .col-1-2, section .col-1-2, footer .col-1-12, .col-1-3, .col-2-3, .col-1-7, .col-1-12, .col-1-4 {
 		width: 100%;
 	}
 	
@@ -604,8 +758,12 @@ ul.tabs li.current {
 	}
 	
 	.carousel-cell {
-    height: 400px;
+    height: 300px;
   }
+	
+	.carousel-cell img {
+		max-height: 100%;
+	}
 	
 	.container img {
 		display: none;
@@ -614,6 +772,16 @@ ul.tabs li.current {
 	.tab-content {
 		display: block;
 	}
+	
+	#services img, #packages section:last-of-type img {
+		float: left;
+	}
+	
+	#instructors .col-5-6 {
+		position: static;
+		width: 100%;
+	}
+	
 	
 	
 	
