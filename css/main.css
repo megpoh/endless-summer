@@ -5,14 +5,22 @@
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
 1.0 - Typography
-	1.1 - Headings
-	1.2 - Button
-	1.3 - Lists
-	1.4 - Form
+	1.1 - Text Transform
+	1.2 - Text Align
+	1.3 - Font Weight
+	1.4 - Font Size
+	1.5 - Text Indent
+	1.6 - Headings
+	1.7 - Button
+	1.8 - Lists
+	1.9 - Form
 2.0 - Content
 	2.1 - Site Structure
-	2.2 - Positioning
-	2.3 - Columns
+	2.2 - Site Header
+	2.3 - Site Footer
+	2.4 - Display
+	2.5 - Positioning
+	2.6 - Columns
 3.0 - Media
 4.0 - Utility
 	4.1 - Text Sizes
@@ -30,34 +38,62 @@
 	box-sizing: border-box;
 }
 
-body {
+body, html {
 	overflow-x: hidden;
 }
-
-/*--------------------------------------------------------------
->>> TYPOGRAPHY:
-----------------------------------------------------------------*/
 
 html {
 	font: 14px 'Open Sans', sans-serif;
 	color: #084771;
 }
 
-p {
-	font-size: 1rem;
+#home:after {
+	content: 'SUMMER';
+	color: #084771;
+	font-size: 15rem;
+	right: 420px;
+	bottom: -50px;
+	z-index: -2;
 }
 
-#about h3, h4, #about a, form a, #packages a {
-	font-size: 1rem;
+#instructors:after { 
+	content: "INSTRUCTORS";
+	color: #084771;
+	font-size: 15rem;
+	right: -890px;
+    bottom: 350px;
+	z-index: -2;
 }
+
+#packages:after { 
+	content:"PA \A CKAGES" ;
+	white-space: pre;
+	color: #084771;
+	font-size: 15rem;
+	line-height: 180px;
+	left: -50px;
+	top: 400px;
+	z-index: -2;
+}
+
+/*--------------------------------------------------------------
+>>> TYPOGRAPHY:
+----------------------------------------------------------------*/
+/*1.1 - Text Transform*/
+
+h1, h2, h3, h4, #about a, form a, #packages a {
+	text-transform: uppercase;
+}
+
+.bg-lght-blue h2, .tabs header h3, .tabs header p {
+	text-transform: capitalize;
+}
+
+/*1.2 - Text Align*/
 
 #about h3 {
 	text-align: left;
 	padding-right: 20px;
-}
-
-#home p, header li a, #about a, form a, #packages a, .hoverParent:hover .hoverContent {
-	color: #fff;
 }
 
 h1, h1+p, .tabs header h3, .tabs header p, #home div.col-1-4:first-of-type, footer .col-1-4:last-of-type, ul.tabs {
@@ -68,15 +104,9 @@ h1, h1+p, .tabs header h3, .tabs header p, #home div.col-1-4:first-of-type, foot
 	text-align: center;
 }
 
-h1, h2, h3, h4, #about a, form a, #packages a {
-	text-transform: uppercase;
-}
+/*1.3 - Font Weight*/
 
-.bg-lght-blue h2, .tabs header h3, .tabs header p {
-	text-transform: capitalize;
-}
-
-h4, .tabs header h3 {
+#home p, #packages div.wrapper>div:first-child, #packages h2+p, #instructors header+p, h4, .tabs header h3 {
 	font-weight: 600;
 }
 
@@ -88,20 +118,41 @@ h4, .tabs header h3 {
 	font-weight: 300;
 }
 
+/*1.4 - Font Size*/
+
+p {		/* USE FOR EACH SITE */
+	font-size: 1rem;
+}
+
+#about h3, h4, #about a, form a, #packages a, .tabs header p {
+	font-size: 1rem;
+}
+
 #packages section span {
 	font-size: 1.5rem;
 }
 
+/*1.5 - Text Indent*/
 
+.tab-content .col-1-2 h3 {
+	text-indent: -184px;
+}
 
-/*1.1 - Headings*/
+#tab-1 .col-1-2 h3 {
+	text-indent: -335px;
+}
+
+/*1.5 - Headings*/
 
 #packages section h3, #instructors h2 {
 	font-size: 3rem;
-	margin: 0;
 }
 
-/*1.2 - Buttons*/
+.tabs header h3 {
+	font-size: .65rem;
+}
+
+/*1.6 - Buttons*/
 
 header li a, #about a, form a, #packages a, footer nav li a, .bg-lght-blue div div.col-5-12 p:last-of-type a {
 	text-decoration: none;
@@ -111,16 +162,8 @@ header li a, #about a, form a, #packages a, footer nav li a, .bg-lght-blue div d
 	background-color: #f07c5e;
 }
 
-#about p {
-	padding-left: 20px;
-}
-
 #about a, form a, #packages a {
 	padding: 8px 30px;
-}
-
-#social li a {
-	padding: 0;
 }
 
 form a:hover, #about a:hover, #packages a:hover {
@@ -128,24 +171,112 @@ form a:hover, #about a:hover, #packages a:hover {
 	border: 2px solid #f07c5e;
 }
 
-/*1.3 - Lists*/
+ul li a:hover {
+	border: none;
+}
+
+#instructors p:first-of-type a {
+	color: #084771;
+	text-decoration: none;
+}
+
+#instructors p:first-of-type a:hover {
+	color: #d86f55;
+}
+
+/*1.7 - Lists*/
 
 #home nav li, footer nav li, ul.tabs, #all-packages, #social ul, ul.tabs {
 	list-style: none;
 }
 
-ul li a:hover {
-	border: none;
+ul.tabs li {
+	background: none;
+	color: #222;
+	padding: 10px 15px;
+	cursor: pointer;
 }
 
-/*1.4 - Form*/
-
-form label, .flickity-prev-next-button, .tab-content, .hoverContent, #social ul span, .tab-content {
-	display: none;
-}
+/*1.8 - Form*/
 
 input {				
 	line-height: 2.15;
+}
+
+
+select {
+	-webkit-appearance: none;
+	color: #7d7e81;
+}
+
+  
+/*--------------------------------------------------------------
+>>> 2.0 CONTENT:
+----------------------------------------------------------------*/
+
+/*2.1 - Site Structure*/
+
+[class*='col-'] {
+	float: left;
+	padding: 0 10px 20px 10px;
+}
+
+[class*='col-']:last-of-type {
+  padding-right: 0;
+}
+
+.center-block, .wrapper {
+	margin: 0 auto;
+}
+
+.wrapper {
+	width: 80%;
+}
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.tab-content p:last-of-type {
+	margin-top: 30px;
+}
+
+#instructors h2, .tabs header h3 {
+	margin-bottom: 0;
+}
+
+#instructors header+p, .bg-lght-blue h2, #about h3, nav ul, #map {
+	margin-top: 0;
+}
+
+h4 {
+	margin: 70px 0 40px 0;
+}
+
+#tab-5 h4 {
+	margin: 20px 0 5px 0;
+}
+
+.bg-lght-blue ul li a {
+	margin-top: 5px;
+}
+
+ul.tabs {
+	margin: 0;
+}
+
+#about input {
+	width: 500px;
+}
+
+#about p {
+	padding-left: 20px;
+}
+
+#packages h2 {
+	margin: 50px 0 0 0;
 }
 
 .bg-lght-blue form input, select, #messages {
@@ -169,78 +300,40 @@ input {
 	padding: 8px 0 100px 10px;
 }
 
-
-select {
-	-webkit-appearance: none;
-	color: #7d7e81;
-}
-
 #about input {
 	padding: 2px 0 2px 5px;
 }
 
-  
-/*--------------------------------------------------------------
->>> 2.0 CONTENT:
-----------------------------------------------------------------*/
+#packages-more div {
+	margin-bottom: 50px;
+}
 
-/*2.1 - Site Structure*/
+/*2.2 - Site Header*/
 
-@media screen and (min-width: 480px) {
-	.container {
-		width: 900px;
-		margin: 0 auto;
-	}
-	
-	header li span {
-		overflow: hidden;
-		background-color: #f07c5e;
-		display: inline-block;
-	}
-	
-	header li a {
-		opacity: 0;
-		padding: 10px;
-		color: #fff;
-		max-width: 0;
-		display: inline-block;
-		text-decoration: none;
-		transition: max-width 1s ease-out .1s, opacity 1s ease-out .1s, color;
-	}
+#home nav li {
+	margin: 8px;
+}
 
-	header span:hover a {
-		opacity: 1;
-		max-width: 150px;
-		transition: max-width 1s ease-out .1s, opacity 1s ease-out .1s, color .2s;
-	}
-	
+header .wrapper>div {
+	padding-top: 20px;
 }
 
 
+/*2.3 - Site Footer*/
 
-[class*='col-'] {
-	float: left;
-	padding: 0 10px 20px 10px;
+footer nav li {
+	padding-right: 20px;
 }
 
-[class*='col-']:last-of-type {
-  padding-right: 0;
+footer {
+	padding-top: 50px;
 }
 
-.wrapper {
-	width: 80%;
-	margin: 0 auto;
+footer nav {
+	margin-top: 20px;
 }
 
-.row:after {
-	content: "";
-	display: table;
-	clear: both;
-}
-
-.tab-content p:last-of-type {
-	margin-top: 30px;
-}
+/*2.4 - Display*/
 
 footer nav li, form, #about p {
 	display: inline;
@@ -250,89 +343,15 @@ header li a, #dropdown, ul.tabs li, #social ul li, #social ul li a {
 	display: inline-block;
 }
 
-footer nav li {
-	padding-right: 20px;
-}
-
-#home nav li {
-	margin: 8px;
-}
-
-#instructors h2 {
-	margin-bottom: 0;
-}
-
-#instructors header+p, .bg-lght-blue h2 {
-	margin-top: 0;
-}
-
-h4 {
-	margin: 70px 0 40px 0;
-}
-
-#tab-5 h4 {
-	margin: 20px 0 5px 0;
-}
-
-header .wrapper>div {
-	padding-top: 20px;
-}
-
-.center-block {
-	margin: 0 auto;
-}
-
-.bg-lght-blue ul li a {
-	margin-top: 5px;
-}
-
-footer {
-	padding-top: 50px;
-}
-
-ul.tabs {
-	margin: 0px;
-	padding: 0px;
-}
-
-ul.tabs li {
-	background: none;
-	color: #222;
-	padding: 10px 15px;
-	cursor: pointer;
-}
-
-ul.tabs li.current {
-	background: #ededed;
-	color: #222;
+form label, .flickity-prev-next-button, .tab-content, .hoverContent, #social ul span, .tab-content {
+	display: none;
 }
 
 .tab-content.current {
 	display: inherit;
 }
 
-.tab-content .col-1-2 h3 {
-	text-indent: -184px;
-}
-
-.tab-content #tab-1 h3 {
-	text-indent: -335px;
-}
-
-#about input {
-	width: 500px;
-}
-
-#about h3, nav ul {					/*--------------MARGIN TOP: 0;-------------*/
-	margin-top: 0;
-}
-
-#packages h2 {
-	margin: 50px 0 0 0;
-}
-
-
-/*2.2 - Positioning*/
+/*2.5 - Positioning*/
 
 #dropdown, #five-day-pckg, #instructors .wrapper, .hoverParent, #home, #packages, #instructors {
 	position: relative;
@@ -347,7 +366,7 @@ select+span, #instructors .col-5-6, #gallery, .hoverParent:hover .hoverContent, 
 	left: 0;
 }
 
-select+span {
+select+span { 	/* TRIANGLE DROP DOWN ON FORM SELECT*/
 	cursor: pointer;
     width: 0;
     height: 0;
@@ -416,12 +435,6 @@ select+span {
 	left: 0;
 }
 
-
-
-
-
-
-
 .hoverParent:last-child {
 	margin-right: 0;
 }
@@ -436,13 +449,8 @@ ul.tabs {
 	padding: 15px;
 }
 
-.tab-content.current{
-	display: inherit;
-}
-
 #map {
 	height: 300px;
-	margin-top: 0;
 	width: 400px;
 }
 
@@ -458,47 +466,15 @@ ul.tabs {
   height: 400px;
 }
 
-
-#slide-0 {
-  background-image: url(../img/gallery-1.jpg);
-}
-
-#slide-1 {
-  background-image: url(../img/gallery-2.jpg);
-}
-
-#slide-2 {
-  background-image: url(../img/gallery-3.jpg);
-}
-
-#slide-3 {
-  background-image: url(../img/gallery-4.jpg);
-}
-
-#slide-4 {
-  background-image: url(../img/gallery-5.jpg);
-}
-
-
 .tab-content div:last-of-type {
 	margin-left: 50px;
 }
 
-#tab-5 .col-2-3 {
+#tab-5 .col-2-3, #social li a, ul.tabs, form .col-1-2:first-of-type {
 	padding: 0;
 }
 
-#packages .container header+p {
-	margin: 0;
-}
-
-.tabs header h3 {
-	font-size: .65rem;
-	margin-bottom: 0;
-}
-
-.tabs header p {
-	font-size: 1rem;
+#packages .container header+p, .tabs header p, #packages section h3, #instructors h2 {
 	margin: 0;
 }
 
@@ -510,15 +486,12 @@ ul.tabs {
     margin-right: 48%;
 }
 
-footer nav {
-	margin-top: 20px;
-}
-
 #about>div {
 	margin-top: 70px;
 }
 
-/*2.3 - Columns*/
+
+/*2.6 - Columns*/
 
 .col-1-2 {
 	width: 50%;
@@ -637,14 +610,8 @@ footer nav {
 >>> 3.0 - Media 
 -------------------------------------------------------------- */
 
-
-#home:after { /* TYPOGRAPHY  */
-	content: 'SUMMER';
-	color: #084771;
-	font-size: 15rem;
-	right: 420px;
-	bottom: -50px;
-	z-index: -2;
+.img-responsive {
+	max-width: 100%;
 }
 
 #home {
@@ -659,12 +626,30 @@ footer nav {
 	min-height: 700px;
 }	
 
+#instructors {
+	background: url(../img/background-blue-bottom-01.svg) no-repeat;
+	-moz-background-size: cover;
+	-webkit-background-size: cover;
+	-o-background-size: cover;
+	-ms-background-size: cover;
+	background-size: cover;
+	height: 500px;
+	top: 0;
+	bottom: 0;
+}
+
+#packages { 
+	top: 0;
+	left: 0;
+	background: url(../img/background-blue.svg) no-repeat 200px 300px;
+	width: 100%;
+}
+
 #social ul {
 	padding-left: 0;
 	float: right;
     margin-right: 68px;
 }
-
 
 #social ul li a {
 	width: 25px;
@@ -687,67 +672,31 @@ footer nav {
 	background-position: 0 -25px;
 }
 
-.img-responsive {
-	max-width: 100%;
+#slide-0 {
+  background-image: url(../img/gallery-1.jpg);
 }
 
-#packages:after { /* TYPOGRAPHY  */
-	content:"PA \A CKAGES" ;
-	white-space: pre;
-	color: #084771;
-	font-size: 15rem;
-	line-height: 180px;
-	left: -50px;
-	top: 400px;
-	z-index: -2;
+#slide-1 {
+  background-image: url(../img/gallery-2.jpg);
 }
 
-
-#packages { /* BLUE BACKGROUND WAVE */
-	top: 0;
-	left: 0;
-	background: url(../img/background-blue.svg) no-repeat 200px 300px;
-	width: 100%;
+#slide-2 {
+  background-image: url(../img/gallery-3.jpg);
 }
 
-#instructors {
-	background: url(../img/background-blue-bottom-01.svg) no-repeat;
-	-moz-background-size: cover;
-	-webkit-background-size: cover;
-	-o-background-size: cover;
-	-ms-background-size: cover;
-	background-size: cover;
-	height: 500px;
-	top: 0;
-	bottom: 0;
+#slide-3 {
+  background-image: url(../img/gallery-4.jpg);
 }
 
-#instructors:after { /* TYPOGRAPHY  */
-	content: "INSTRUCTORS";
-	color: #084771;
-	font-size: 15rem;
-	right: -890px;
-    bottom: 350px;
-	z-index: -2;
+#slide-4 {
+  background-image: url(../img/gallery-5.jpg);
 }
-
-#packages-more div {
-	margin-bottom: 50px;
-}
-
-
-	
-
-
-
-
 
 /*--------------------------------------------------------------
 >>> 4.0 UTILITY:
 ----------------------------------------------------------------*/
 
 /*4.1 - Colors*/
-
 
 .bg-lght-blue div div.col-5-12 p:last-of-type a, footer nav li a {
 	color: #f07c5e;
@@ -757,7 +706,9 @@ footer nav {
 	color: #d86f55;
 }
 
-
+#home p, header li a, #about a, form a, #packages a, .hoverParent:hover .hoverContent {
+	color: #fff;
+}
 
 /*--------------------------------------------------------------
 >>> 5.0 FLOATS:
@@ -772,10 +723,7 @@ footer nav {
 
 .slide {
 	float: left;
-}
-
-
-
+} 
 /*--------------------------------------------------------------
 >>> 6.0 FLEX:
 ----------------------------------------------------------------*/
@@ -804,20 +752,43 @@ footer nav {
   flex: 1;
 }
 
-
-
-#instructors p:first-of-type a {
-	color: #084771;
-	text-decoration: none;
-}
-
-
-
-
 /*--------------------------------------------------------------
 >>> 7.0 RESPONSIVE/MEDIA QUERIES:
-----------------------------------------------------------------
-/*7.1 - SMALL DISPLAY--smaller than tablet*/
+----------------------------------------------------------------*/
+
+/*7.1 - MEDIUM DISPLAY*/
+
+@media screen and (min-width: 480px) {
+	.container {
+		width: 900px;
+		margin: 0 auto;
+	}
+	
+	header li span {
+		overflow: hidden;
+		background-color: #f07c5e;
+		display: inline-block;
+	}
+	
+	header li a {
+		opacity: 0;
+		padding: 10px;
+		color: #fff;
+		max-width: 0;
+		display: inline-block;
+		text-decoration: none;
+		transition: max-width 1s ease-out .1s, opacity 1s ease-out .1s, color;
+	}
+
+	header span:hover a {
+		opacity: 1;
+		max-width: 150px;
+		transition: max-width 1s ease-out .1s, opacity 1s ease-out .1s, color .2s;
+	}
+	
+}
+
+/*7.2 - SMALL DISPLAY--smaller than tablet*/
 
 @media screen and (max-width: 480px) {
 	
@@ -825,79 +796,66 @@ footer nav {
 		width: 94%;
 	}
 	
-
-/*--------------------------------------------------------------
->>> TYPOGRAPHY:
-----------------------------------------------------------------*/
+	/*--------------------------------------------------------------
+	>>> TYPOGRAPHY:
+	----------------------------------------------------------------*/
 	
-	nav ul li {
-		list-style: none;
-		display: inline-block;
-	}
+	
+	/*1.2 - Text Align*/
 	
 	#home .wrapper div:nth-child(2) div {
 		text-align: right;
 	}
 	
-	#home .wrapper div:nth-child(3) div, #instructors header, #instructors header+p, section .col-1-2, footer .col-1-12 {
+	#home .wrapper div:nth-child(3) div, #instructors header, #instructors header+p, section .col-1-2, footer .col-1-12, #about h3, #packages h2+p, footer .col-1-4, 	nav ul, #packages .col-1-2 p:last-child {
 		text-align: center;
 	}
 	
-	#instructor-advgs {
+	#instructor-advgs, #packages p, #tab-5 div.col-1-2 section.col-2-3 p, section.bg-lght-blue div.col-5-12 p, #packages section h3, #tab-5 h4 {
 		text-align: left;
 	}
-
 	
-	#img-5-day {
-		display: none;
-	}
-
-
-/*--------------------------------------------------------------
->>> 3.0 CONTENT:
-----------------------------------------------------------------*/
+	/*1.5 - Text Indent*/
 	
-	/*3.1 - Site Structure*/
-	
-	nav.col-5-12, #home .wrapper div:nth-child(2) div, input, #services .col-1-6, #packages [class*="col-"], #instructors .col-1-2, section .col-1-2, footer .col-1-12, .col-1-3, .col-2-3, .col-1-7, .col-1-12, .col-1-4 {
-		width: 100%;
+	#tab-1 .col-1-2 h3, .tab-content .col-1-2 h3 {
+		text-indent: 0;
 	}
 	
-	.container {
-	display: block;
-}
+	/*1.6 - Headings*/
 	
 	#packages h2, #instructors h2 {
 		font-size: 2rem;
 	}
 	
-	footer .col-1-2 {
-		width: 100%;
+	#tab-5 h4 {
+		font-size: 1rem;
 	}
 	
-	footer .col-1-4:last-of-type {
-		display: none;
+	#packages section h3 {
+		font-size: 1.25rem;
+		text-transform: capitalize;
 	}
 	
-	.tabs, #home:after, #packages:after, #instructors:after {
-		display: none;
+	/*1. - Lists*/
+	
+	nav ul li, .container img {
+		list-style: none;
 	}
 	
-	#about div.col-2-6 {
-		display: block;
-		width: 100%;
+	/*--------------------------------------------------------------
+	>>> 3.0 CONTENT:
+	----------------------------------------------------------------*/
+	
+	/*3.1 - Site Structure*/
+	
+	#about div.col-2-6, #about form.col-4-6 {
 		padding-left: 0;
 	}
 	
 	#about h3 {
 		padding: 0;
-		text-align: center;
 	}
-	
-	#about div.col-5-6, #about input, #about form.col-4-6, section.bg-lght-blue div.col-5-12, section.bg-lght-blue div.col-7-12, section.bg-lght-blue form input, #dropdown, #messages, #social ul, #map {
-		width: 100%;
-	}
-	
+
 	#about div.col-5-6, #packages-more h4 {
 		margin-top: 0;
 	}
@@ -906,29 +864,12 @@ footer nav {
 		margin-bottom: 20px;
 	}
 	
-	#packages-more div.col-1-6 {
+	#packages-more div.col-1-6, #packages-more div {
 		margin-bottom: 0;
 	}
 	
-	#about div.col-2-6 br {
-		display: none;
-	}
-	
-	#about form.col-4-6 {
-		padding-left: 0;
-	}
-	
-	#about a, #packages a {
-		display: block;
+	#about a, #packages a, form a {
 		padding: 15px 0;
-	}
-	
-	#packages p {
-		text-align: left;
-	}
-	
-	#packages h2+p, footer .col-1-4 {
-		text-align: center;
 	}
 	
 	#packages img {
@@ -939,19 +880,15 @@ footer nav {
 		background: none;
 	}
 	
-	.tab-content .col-1-2 h3 {
-		text-indent: 0;
-	}
-	
 	#packages div.col-1-2 {
 		margin-left: 0;
 	}
-
+	
 	#instructor-advgs li {
 		padding-bottom: 20px;
 	}
 
-	section.bg-lght-blue div.col-7-12 {
+	section.bg-lght-blue div.col-7-12, #instructors header {
 		margin-top: 50px;
 	}
 	
@@ -963,29 +900,64 @@ footer nav {
 		margin: 0;
 	}
 	
-	section.bg-lght-blue div.col-5-12 p {
-		text-align: left;
-	}
-	
-	#packages section h3 {
-		font-size: 1.25rem;
-		text-align: left;
-		text-transform: capitalize;
-	}
-	
-	#packages .tab-content .col-1-2 p:last-child {
-		text-align: center;
-	}
-	
-	#tab-5 h4 {
-		text-align: left;
-		font-size: 1rem;
-	}
-	
 	nav ul {
-		width: 100%;
-		text-align: center;
 		padding: 0;
+	}
+	
+	#home div.col-1-4:first-of-type {
+		margin-right: 43%;
+	}
+	
+	.gallery-cell { 
+		width: 50%; 
+	}
+	
+	.carousel-cell {
+  	  	height: 300px;
+  	}
+	
+	.carousel-cell img {
+		max-height: 100%;
+	}
+	
+	.full-width-bar {
+	  margin: 0 -9999rem;
+	  padding: 1.25rem 9999rem;
+	}
+	
+	/*3.4 - Display*/
+	
+	.container, #about div.col-2-6, #about a, #packages a, .tab-content, form a {
+		display: block;
+	}
+	
+	nav ul li {
+		display: inline-block;
+	}
+	
+	.tabs, #home:after, #packages:after, #instructors:after, footer .col-1-4:last-of-type, #img-5-day, #about div.col-2-6 br, .container div.col-5-12 {
+		display: none;
+	}
+	
+	/*3.5 - Positioning*/
+	
+	#instructors .col-5-6 {
+		position: static;
+	}
+	
+	/*3.6 - Columns*/
+
+	nav.col-5-12, #home .wrapper div:nth-child(2) div, input, #services .col-1-6, #packages [class*="col-"], #instructors .col-1-2, section .col-1-2, footer .col-1-12, .col-1-3, .col-2-3, .col-1-7, .col-1-12, .col-1-4, footer .col-1-2, #about div.col-2-6, #about div.col-5-6, #about input, #about form.col-4-6, section.bg-lght-blue div.col-5-12, section.bg-lght-blue div.col-7-12, section.bg-lght-blue form input, #dropdown, #messages, #social ul, #map, #instructors .col-5-6, nav ul {
+		width: 100%;
+	}
+	
+	/*--------------------------------------------------------------
+	>>> 4.0 UTILITY:
+	----------------------------------------------------------------*/
+
+	/*4.1 - Colors*/
+	.bg-lght-blue-sm, .full-width-bar {
+		background-color: #daedf7;
 	}
 	
 	nav ul li a {
@@ -996,50 +968,13 @@ footer nav {
 		color: #d86f55;
 	}
 	
-	#home div.col-1-4:first-of-type {
-		margin-right: 43%;
-	}
-	
-	
-	
-	
-
-	
-/*--------------------------------------------------------------
->>> 4.0 - Media 
--------------------------------------------------------------- */
-	.gallery-cell { 
-		width: 50%; 
-	}
-	
-	.carousel-cell {
-    height: 300px;
-  }
-	
-	.carousel-cell img {
-		max-height: 100%;
-	}
-	
-	.container img {
-		display: none;
-	}
-	
-	.tab-content {
-		display: block;
-	}
+	/*--------------------------------------------------------------
+	>>> 5.0 FLOATS:
+	----------------------------------------------------------------*/
 	
 	#services img, #packages section:last-of-type img {
 		float: left;
 	}
-	
-	#instructors .col-5-6 {
-		position: static;
-		width: 100%;
-	}
-	
-	
-	
-	
 
 } 
 
