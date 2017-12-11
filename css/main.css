@@ -10,10 +10,9 @@
 	1.3 - Font Weight
 	1.4 - Font Size
 	1.5 - Text Indent
-	1.6 - Headings
 	1.7 - Button
-	1.8 - Lists
-	1.9 - Form
+	1.8 - Form
+	1.9 - Margin & Padding
 2.0 - Content
 	2.1 - Site Structure
 	2.2 - Site Header
@@ -47,10 +46,13 @@ html {
 	color: #084771;
 }
 
+#home:after, #instructors:after, #packages:after {
+	font-size: 15rem;
+	z-index: -2;
+}
+
 #home:after {
 	content: 'SUMMER';
-	color: #084771;
-	font-size: 15rem;
 	right: 420px;
 	bottom: -50px;
 	z-index: -2;
@@ -58,22 +60,16 @@ html {
 
 #instructors:after { 
 	content: "INSTRUCTORS";
-	color: #084771;
-	font-size: 15rem;
 	right: -890px;
     bottom: 350px;
-	z-index: -2;
 }
 
 #packages:after { 
 	content:"PA \A CKAGES" ;
 	white-space: pre;
-	color: #084771;
-	font-size: 15rem;
 	line-height: 180px;
 	left: -50px;
 	top: 400px;
-	z-index: -2;
 }
 
 /*--------------------------------------------------------------
@@ -85,7 +81,7 @@ h1, h2, h3, h4, #about a, form a, #packages a {
 	text-transform: uppercase;
 }
 
-.bg-lght-blue h2, .tabs header h3, .tabs header p {
+.bg-lght-blue h2, .tabs h3, .tabs p {
 	text-transform: capitalize;
 }
 
@@ -96,7 +92,7 @@ h1, h2, h3, h4, #about a, form a, #packages a {
 	padding-right: 20px;
 }
 
-h1, h1+p, .tabs header h3, .tabs header p, #home div.col-1-4:first-of-type, footer .col-1-4:last-of-type, ul.tabs {
+h1, h1+p, .tabs h3, .tabs p, #home div.col-1-4:first-of-type, footer .col-1-4:last-of-type, ul.tabs {
 	text-align: right;
 }
 
@@ -106,7 +102,7 @@ h1, h1+p, .tabs header h3, .tabs header p, #home div.col-1-4:first-of-type, foot
 
 /*1.3 - Font Weight*/
 
-#home p, #packages div.wrapper>div:first-child, #packages h2+p, #instructors header+p, h4, .tabs header h3 {
+#home p, #packages div.wrapper>div:first-child, #packages h2+p, #instructors header+p, h4, .tabs h3 {
 	font-weight: 600;
 }
 
@@ -114,22 +110,26 @@ h1, h1+p, .tabs header h3, .tabs header p, #home div.col-1-4:first-of-type, foot
 	font-weight: 700;
 }
 
-#packages section span, .tabs header p {
+#packages section span, .tabs p {
 	font-weight: 300;
 }
 
 /*1.4 - Font Size*/
 
-p {		/* USE FOR EACH SITE */
+p, #about h3, h4, #about a, form a, #packages a, .tabs p {
 	font-size: 1rem;
 }
 
-#about h3, h4, #about a, form a, #packages a, .tabs header p {
-	font-size: 1rem;
-}
-
-#packages section span {
+#packages section span, #packages-more h3 {
 	font-size: 1.5rem;
+}
+
+#packages .tab-content h3, #instructors h2 {
+	font-size: 3rem;
+}
+
+.tabs h3 {
+	font-size: .85rem;
 }
 
 /*1.5 - Text Indent*/
@@ -140,16 +140,6 @@ p {		/* USE FOR EACH SITE */
 
 #tab-1 .col-1-2 h3 {
 	text-indent: -335px;
-}
-
-/*1.5 - Headings*/
-
-#packages section h3, #instructors h2 {
-	font-size: 3rem;
-}
-
-.tabs header h3 {
-	font-size: .65rem;
 }
 
 /*1.6 - Buttons*/
@@ -164,6 +154,7 @@ header li a, #about a, form a, #packages a, footer nav li a, .bg-lght-blue div d
 
 #about a, form a, #packages a {
 	padding: 8px 30px;
+	border: 1px solid #f07c5e;
 }
 
 form a:hover, #about a:hover, #packages a:hover {
@@ -197,6 +188,10 @@ ul.tabs li {
 	cursor: pointer;
 }
 
+#instructors ul {
+	line-height: 46px;
+}
+
 /*1.8 - Form*/
 
 input {				
@@ -209,6 +204,34 @@ select {
 	color: #7d7e81;
 }
 
+address {
+	font-style: normal;
+}
+
+/*1.9 - Margin & Padding*/
+h4 {
+	margin: 70px 0 40px 0;
+}
+
+#tab-5 h4 {
+	margin: 20px 0 5px 0;
+}
+
+#instructors h2, .tabs h3 {
+	margin-bottom: 0;
+}
+
+#instructors header+p, .bg-lght-blue h2, #about h3, nav ul, #map {
+	margin-top: 0;
+}
+
+#about p {
+	padding-left: 20px;
+}
+
+#packages h2 {
+	margin: 50px 0 0 0;
+}
   
 /*--------------------------------------------------------------
 >>> 2.0 CONTENT:
@@ -222,7 +245,7 @@ select {
 }
 
 [class*='col-']:last-of-type {
-  padding-right: 0;
+  	padding-right: 0;
 }
 
 .center-block, .wrapper {
@@ -243,22 +266,6 @@ select {
 	margin-top: 30px;
 }
 
-#instructors h2, .tabs header h3 {
-	margin-bottom: 0;
-}
-
-#instructors header+p, .bg-lght-blue h2, #about h3, nav ul, #map {
-	margin-top: 0;
-}
-
-h4 {
-	margin: 70px 0 40px 0;
-}
-
-#tab-5 h4 {
-	margin: 20px 0 5px 0;
-}
-
 .bg-lght-blue ul li a {
 	margin-top: 5px;
 }
@@ -269,14 +276,6 @@ ul.tabs {
 
 #about input {
 	width: 500px;
-}
-
-#about p {
-	padding-left: 20px;
-}
-
-#packages h2 {
-	margin: 50px 0 0 0;
 }
 
 .bg-lght-blue form input, select, #messages {
@@ -306,6 +305,10 @@ ul.tabs {
 
 #packages-more div {
 	margin-bottom: 50px;
+}
+
+#packages-more header {
+	margin: 50px 0 25px;
 }
 
 /*2.2 - Site Header*/
@@ -407,7 +410,7 @@ select+span { 	/* TRIANGLE DROP DOWN ON FORM SELECT*/
 
 .hoverParent:hover .hoverContent {
 	background-color: rgba(6, 6, 51, 0.5);
-	padding-top: 40px;
+	padding-top: 78px;
 	width: 100%;
 	height: 100%;
 	display: block;
@@ -426,8 +429,8 @@ select+span { 	/* TRIANGLE DROP DOWN ON FORM SELECT*/
 .hoverParent {
 	top: 0; 
 	left: 0;
-	width: 100px;
-    height: 100px;
+	width: 150px;
+    height: 150px;
 }
 
 .hoverContent {
@@ -467,18 +470,18 @@ ul.tabs {
 }
 
 .tab-content div:last-of-type {
-	margin-left: 50px;
+	margin-top: 39px;
 }
 
 #tab-5 .col-2-3, #social li a, ul.tabs, form .col-1-2:first-of-type {
 	padding: 0;
 }
 
-#packages .container header+p, .tabs header p, #packages section h3, #instructors h2 {
+#packages .container header+p, .tabs p, #packages section h3, #instructors h2 {
 	margin: 0;
 }
 
-.tabs header h3, .tabs header p {
+.tabs h3, .tabs p {
 	padding-right: 10px;
 }
 
@@ -615,34 +618,33 @@ ul.tabs {
 }
 
 #home {
-	top: 0;
-	left: 0;
-	background: url(../img/header-image.svg) no-repeat center;
-	-moz-background-size: cover;
-	-webkit-background-size: cover;
-	-o-background-size: cover;
-	-ms-background-size: cover;
-	background-size: cover;
+	background: url(../img/header-image.svg) center;
 	min-height: 700px;
 }	
 
 #instructors {
-	background: url(../img/background-blue-bottom-01.svg) no-repeat;
-	-moz-background-size: cover;
-	-webkit-background-size: cover;
-	-o-background-size: cover;
-	-ms-background-size: cover;
-	background-size: cover;
+	background: url(../img/background-blue-bottom-01.svg);
 	height: 500px;
 	top: 0;
 	bottom: 0;
 }
 
+#home, #instructors {
+	-moz-background-size: cover;
+	-webkit-background-size: cover;
+	-o-background-size: cover;
+	-ms-background-size: cover;
+	background-size: cover;
+}
+
 #packages { 
-	top: 0;
-	left: 0;
 	background: url(../img/background-blue.svg) no-repeat 200px 300px;
 	width: 100%;
+}
+
+#home, #packages {
+	top: 0;
+	left: 0;
 }
 
 #social ul {
@@ -760,7 +762,6 @@ ul.tabs {
 
 @media screen and (min-width: 480px) {
 	.container {
-		width: 900px;
 		margin: 0 auto;
 	}
 	
@@ -856,11 +857,11 @@ ul.tabs {
 		padding: 0;
 	}
 
-	#about div.col-5-6, #packages-more h4 {
+	#about div.col-5-6, #packages-more h3 {
 		margin-top: 0;
 	}
 	
-	#packages-more h4 {
+	#packages-more h3 {
 		margin-bottom: 20px;
 	}
 	
