@@ -14,12 +14,13 @@
 	1.8 - Form
 	1.9 - Margin & Padding
 2.0 - Content
-	2.1 - Site Structure
-	2.2 - Site Header
-	2.3 - Site Footer
-	2.4 - Display
-	2.5 - Positioning
-	2.6 - Columns
+	2.1 - Background Typography
+	2.2 - Site Structure
+	2.3 - Site Header
+	2.4 - Site Footer
+	2.5 - Display
+	2.6 - Positioning
+	2.7 - Columns
 3.0 - Media
 4.0 - Utility
 	4.1 - Text Sizes
@@ -46,30 +47,8 @@ html {
 	color: #084771;
 }
 
-#home:after, #instructors:after, #packages:after {
-	font-size: 15rem;
-	z-index: -2;
-}
-
-#home:after {
-	content: 'SUMMER';
-	right: 420px;
-	bottom: -50px;
-	z-index: -2;
-}
-
-#instructors:after { 
-	content: "INSTRUCTORS";
-	right: -890px;
-    bottom: 350px;
-}
-
-#packages:after { 
-	content:"PA \A CKAGES" ;
-	white-space: pre;
-	line-height: 180px;
-	left: -50px;
-	top: 400px;
+p {
+	line-height: 21px;
 }
 
 /*--------------------------------------------------------------
@@ -82,12 +61,12 @@ h1, h2, h3, h4, #about a, form a, #packages a {
 }
 
 .bg-lght-blue h2, .tabs h3, .tabs p {
-	text-transform: capitalize;
+	text-transform: none;
 }
 
 /*1.2 - Text Align*/
 
-#about h3 {
+#about h2 {
 	text-align: left;
 	padding-right: 20px;
 }
@@ -110,27 +89,32 @@ h1, h1+p, .tabs h3, .tabs p, #home div.col-1-4:first-of-type, footer .col-1-4:la
 	font-weight: 700;
 }
 
-#packages section span, .tabs p {
+.price, .tabs p {
 	font-weight: 300;
 }
 
 /*1.4 - Font Size*/
 
-p, #about h3, h4, #about a, form a, #packages a, .tabs p {
+p, #about h2, h4, #about a, form a, #packages a, .tabs p {
 	font-size: 1rem;
 }
 
-#packages section span, #packages-more h3 {
+.price, #packages-more h3 {
 	font-size: 1.5rem;
 }
 
-#packages .tab-content h3, #instructors h2 {
+h1, #packages .tab-content h3, #instructors h2 {
 	font-size: 3rem;
 }
 
 .tabs h3 {
 	font-size: .85rem;
 }
+
+h1 {
+	letter-spacing: 5px;
+}
+
 
 /*1.5 - Text Indent*/
 
@@ -144,11 +128,11 @@ p, #about h3, h4, #about a, form a, #packages a, .tabs p {
 
 /*1.6 - Buttons*/
 
-header li a, #about a, form a, #packages a, footer nav li a, .bg-lght-blue div div.col-5-12 p:last-of-type a {
+header li a, #about a, form a, #packages a, footer nav li a, .bg-lght-blue div div.col-5-12 p:last-of-type a, #instructors p:first-of-type a  {
 	text-decoration: none;
 }
 
-#about a, form a, #packages a {
+#about a, #contact-btn p a, #packages a {
 	background-color: #f07c5e;
 }
 
@@ -168,11 +152,14 @@ ul li a:hover {
 
 #instructors p:first-of-type a {
 	color: #084771;
-	text-decoration: none;
 }
 
 #instructors p:first-of-type a:hover {
 	color: #d86f55;
+}
+
+#social a {
+	border: none;
 }
 
 /*1.7 - Lists*/
@@ -214,14 +201,14 @@ h4 {
 }
 
 #tab-5 h4 {
-	margin: 20px 0 5px 0;
+	margin: 20px 0 0;
 }
 
-#instructors h2, .tabs h3 {
+#instructors h2, .tabs h3, h1 {
 	margin-bottom: 0;
 }
 
-#instructors header+p, .bg-lght-blue h2, #about h3, nav ul, #map {
+#instructors header+p, .bg-lght-blue h2, #about h2, nav ul, #map {
 	margin-top: 0;
 }
 
@@ -229,31 +216,29 @@ h4 {
 	padding-left: 20px;
 }
 
-#packages h2 {
-	margin: 50px 0 0 0;
+#packages-more h3 {
+	text-align: center;
 }
   
+/*1.10 - Letter spacing*/
+
+/*1.11 - Color*/
+
+h2, h3, h4 {
+	color: #f07c5e;
+}
+
+
 /*--------------------------------------------------------------
 >>> 2.0 CONTENT:
 ----------------------------------------------------------------*/
 
-/*2.1 - Site Structure*/
+.wrapper {
+	width: 80%;
+}
 
 [class*='col-'] {
 	float: left;
-	padding: 0 10px 20px 10px;
-}
-
-[class*='col-']:last-of-type {
-  	padding-right: 0;
-}
-
-.center-block, .wrapper {
-	margin: 0 auto;
-}
-
-.wrapper {
-	width: 80%;
 }
 
 .row:after {
@@ -261,6 +246,38 @@ h4 {
 	display: table;
 	clear: both;
 }
+
+.center-block, .wrapper {
+	margin: 0 auto;
+}
+
+/*2.1 - Background Typography*/
+
+#home:after, #instructors:after, #packages:after {
+	font-size: 15rem;
+}
+
+#home:after {
+	content: 'SUMMER';
+	right: -180px;
+	bottom: -50px;
+}
+
+#instructors:after { 
+	content: "INSTRUCTORS";
+	right: -890px;
+    bottom: 350px;
+}
+
+#packages:after { 
+	content:"PA \A CKAGES" ;
+	white-space: pre;
+	line-height: 180px;
+	left: -50px;
+	top: 400px;
+}
+
+/*2.2 - Site Structure*/
 
 .tab-content p:last-of-type {
 	margin-top: 30px;
@@ -275,17 +292,11 @@ ul.tabs {
 }
 
 #about input {
-	width: 500px;
+	width: 555px;
 }
 
 .bg-lght-blue form input, select, #messages {
 	border-style: none;
-}
-
-.bg-lght-blue form input, select {
-	width: 250px;
-	margin: 0 10px 10px 0;
-	padding: 2px 0 2px 10px;
 }
 
 .bg-lght-blue select {
@@ -295,7 +306,7 @@ ul.tabs {
 }
 
 #messages {
-	width: 515px;
+	width: 100%;
 	padding: 8px 0 100px 10px;
 }
 
@@ -303,15 +314,15 @@ ul.tabs {
 	padding: 2px 0 2px 5px;
 }
 
-#packages-more div {
-	margin-bottom: 50px;
+#packages .col-1-6 {
+	padding-right: 10px;
 }
 
 #packages-more header {
-	margin: 50px 0 25px;
+	margin: 150px 0 50px;
 }
 
-/*2.2 - Site Header*/
+/*2.3 - Site Header*/
 
 #home nav li {
 	margin: 8px;
@@ -322,7 +333,7 @@ header .wrapper>div {
 }
 
 
-/*2.3 - Site Footer*/
+/*2.4 - Site Footer*/
 
 footer nav li {
 	padding-right: 20px;
@@ -336,13 +347,9 @@ footer nav {
 	margin-top: 20px;
 }
 
-/*2.4 - Display*/
+/*2.5 - Display*/
 
-footer nav li, form, #about p {
-	display: inline;
-}
-
-header li a, #dropdown, ul.tabs li, #social ul li, #social ul li a {
+footer nav li, form, #about p, header li a, #dropdown, ul.tabs li, #social ul li, #social ul li a {
 	display: inline-block;
 }
 
@@ -354,7 +361,7 @@ form label, .flickity-prev-next-button, .tab-content, .hoverContent, #social ul 
 	display: inherit;
 }
 
-/*2.5 - Positioning*/
+/*2.6 - Positioning*/
 
 #dropdown, #five-day-pckg, #instructors .wrapper, .hoverParent, #home, #packages, #instructors {
 	position: relative;
@@ -364,9 +371,31 @@ select+span, #instructors .col-5-6, #gallery, .hoverParent:hover .hoverContent, 
 	position: absolute;
 }
 
-#dropdown {
+#dropwdown, #five-day-pckg, #instructors .wrapper, #instructors .col-5-6, #gallery, .hoverParent, .hoverParent:hover .hoverContent {
 	top: 0;
+}
+
+.slide:before, .hoverContent, #instructors {
+	bottom: 0;
+}
+#dropdown, #instructors .wrapper, .hoverParent:hover .hoverContent, .slide:before, .hoverParent, .hoverContent, #home, #packages, #instructors {
 	left: 0;
+}
+
+#instructors .col-5-6 {
+	right: 0;
+}
+
+#home:after, #instructors:after, #packages:after {
+	z-index: -2;
+}
+
+#instructors .col-5-6, #gallery {
+	z-index: -1;
+}
+
+#instructors .wrapper {
+	z-index: 1
 }
 
 select+span { 	/* TRIANGLE DROP DOWN ON FORM SELECT*/
@@ -382,30 +411,10 @@ select+span { 	/* TRIANGLE DROP DOWN ON FORM SELECT*/
 
 #five-day-pckg {
 	left: -150px;
-	top: 0;
-}
-
-#instructors .wrapper {
-	left: 0;
-	top: 0;
-	z-index: 1;
-}
-
-#instructors .col-5-6 {
-	top: 0;
-	right: 0;
-	z-index: -1;
 }
 
 #gallery {
-	top: 0;
 	left: 150px;
-	z-index: -1;
-}
-
-.hoverParent {
-	top: 0; 
-	left: 0;
 }
 
 .hoverParent:hover .hoverContent {
@@ -414,29 +423,19 @@ select+span { 	/* TRIANGLE DROP DOWN ON FORM SELECT*/
 	width: 100%;
 	height: 100%;
 	display: block;
-	top: 0;
-	left: 0;
 }
 
 .slide:before {
   content: "";
-  bottom: 0;
-  left: 0;
   width: 100%;
   height: 40%;
 }
 
 .hoverParent {
-	top: 0; 
-	left: 0;
 	width: 150px;
     height: 150px;
 }
 
-.hoverContent {
-	bottom: 0;
-	left: 0;
-}
 
 .hoverParent:last-child {
 	margin-right: 0;
@@ -473,8 +472,29 @@ ul.tabs {
 	margin-top: 39px;
 }
 
-#tab-5 .col-2-3, #social li a, ul.tabs, form .col-1-2:first-of-type {
+#tab-5 .col-2-3, #social li a, ul.tabs, form .col-1-2:first-of-type{
 	padding: 0;
+}
+
+input, #firstname, select {
+	padding-left: 10px;
+}
+
+select {
+	width: 100%;
+}
+
+select {
+	padding-right: 220px;
+}
+
+input, #dropdown {
+	width: 49%;
+    margin: 0 4px 7px 0;
+}
+
+form {
+	padding-right: 0;
 }
 
 #packages .container header+p, .tabs p, #packages section h3, #instructors h2 {
@@ -490,11 +510,14 @@ ul.tabs {
 }
 
 #about>div {
-	margin-top: 70px;
+	margin: 70px auto 100px;
 }
 
+#services, #packages-more div {
+	margin-bottom: 100px;
+}
 
-/*2.6 - Columns*/
+/*2.7 - Columns*/
 
 .col-1-2 {
 	width: 50%;
@@ -623,10 +646,8 @@ ul.tabs {
 }	
 
 #instructors {
-	background: url(../img/background-blue-bottom-01.svg);
+	background-image: url(../img/background-blue-bottom-01.svg);
 	height: 500px;
-	top: 0;
-	bottom: 0;
 }
 
 #home, #instructors {
@@ -642,15 +663,9 @@ ul.tabs {
 	width: 100%;
 }
 
-#home, #packages {
-	top: 0;
-	left: 0;
-}
-
 #social ul {
 	padding-left: 0;
 	float: right;
-    margin-right: 68px;
 }
 
 #social ul li a {
@@ -663,11 +678,11 @@ ul.tabs {
 }
 
 #social ul li:first-child a {
-	background: url(../img/icon-fb.png);
+	background-image: url(../img/icon-fb.png);
 }
 
 #social ul li:last-child a {
-	background: url(../img/icon-instagram.png);
+	background-image: url(../img/icon-instagram.png);
 }
 
 #social ul li a:hover {
@@ -731,27 +746,25 @@ ul.tabs {
 ----------------------------------------------------------------*/
 
 .flex {
-	display: -webkit-flex;
+	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
  	overflow: hidden;
 }
 
 .bg-lght-blue {
+	-webkit-box-flex: 1;
+	-ms-flex: 1;
   	flex: 1;
 	height: 100%;
 	background-color: #edf4fb;
-}
-
-.flex {
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
- 	overflow: hidden;
+	padding-top: 100px;
 }
 
 .flex [class*='col-'] {
-  flex: 1;
+	-webkit-box-flex: 1;
+    -ms-flex: 1;
+  	flex: 1;
 }
 
 /*--------------------------------------------------------------
@@ -808,11 +821,11 @@ ul.tabs {
 		text-align: right;
 	}
 	
-	#home .wrapper div:nth-child(3) div, #instructors header, #instructors header+p, section .col-1-2, footer .col-1-12, #about h3, #packages h2+p, footer .col-1-4, 	nav ul, #packages .col-1-2 p:last-child {
+	#home .wrapper div:nth-child(3) div, #instructors header, #instructors header+p, footer .col-1-12, #about h2, #packages h2+p, footer .col-1-4, nav ul, .bg-lght-blue h2, section .col-1-2 h2, #packages a, form a, #social ul {
 		text-align: center;
 	}
 	
-	#instructor-advgs, #packages p, #tab-5 div.col-1-2 section.col-2-3 p, section.bg-lght-blue div.col-5-12 p, #packages section h3, #tab-5 h4 {
+	#instructor-advgs, #packages p, #tab-5 div.col-1-2 section.col-2-3 p, section.bg-lght-blue div.col-5-12 p, #tab-5 h4, .tab-content h3, #instructors li, #packages-lead-in p, section .col-1-2 {
 		text-align: left;
 	}
 	
@@ -824,23 +837,40 @@ ul.tabs {
 	
 	/*1.6 - Headings*/
 	
-	#packages h2, #instructors h2 {
+	h1, #packages h2, #instructors h2 {
 		font-size: 2rem;
+	}
+	
+	h1 {
+		letter-spacing: 1px;
 	}
 	
 	#tab-5 h4 {
 		font-size: 1rem;
 	}
 	
-	#packages section h3 {
+	#packages .tab-content h3, nav li a {
 		font-size: 1.25rem;
 		text-transform: capitalize;
+	}
+	
+	#packages-more header {
+		margin: 80px 0 40px;
+	}
+	
+	#about .col-2-6 {
+		width: 100%;
 	}
 	
 	/*1. - Lists*/
 	
 	nav ul li, .container img {
 		list-style: none;
+	}
+	
+	nav ul li, #home nav li {
+		margin: 14px;
+		padding-right: 20px;
 	}
 	
 	/*--------------------------------------------------------------
@@ -853,7 +883,7 @@ ul.tabs {
 		padding-left: 0;
 	}
 	
-	#about h3 {
+	#about h2, nav ul, #about p {
 		padding: 0;
 	}
 
@@ -871,6 +901,10 @@ ul.tabs {
 	
 	#about a, #packages a, form a {
 		padding: 15px 0;
+	}
+	
+	#about br {
+		display: none;
 	}
 	
 	#packages img {
@@ -893,16 +927,8 @@ ul.tabs {
 		margin-top: 50px;
 	}
 	
-	select {
-		width: 356px;
-	}
-	
 	#social ul {
 		margin: 0;
-	}
-	
-	nav ul {
-		padding: 0;
 	}
 	
 	#home div.col-1-4:first-of-type {
@@ -922,8 +948,20 @@ ul.tabs {
 	}
 	
 	.full-width-bar {
-	  margin: 0 -9999rem;
-	  padding: 1.25rem 9999rem;
+	 	margin: 0 -9999rem;
+	  	padding: 1.25rem 9999rem;
+	}
+	
+	nav li:last-child, #home li:last-child {
+		padding-right: 0;
+	}
+	
+	#services div, #packages-more div.col-1-6, #social ul {
+		margin-bottom: 25px;
+	}
+	
+	#services {
+		margin-bottom: 50px;
 	}
 	
 	/*3.4 - Display*/
@@ -948,7 +986,7 @@ ul.tabs {
 	
 	/*3.6 - Columns*/
 
-	nav.col-5-12, #home .wrapper div:nth-child(2) div, input, #services .col-1-6, #packages [class*="col-"], #instructors .col-1-2, section .col-1-2, footer .col-1-12, .col-1-3, .col-2-3, .col-1-7, .col-1-12, .col-1-4, footer .col-1-2, #about div.col-2-6, #about div.col-5-6, #about input, #about form.col-4-6, section.bg-lght-blue div.col-5-12, section.bg-lght-blue div.col-7-12, section.bg-lght-blue form input, #dropdown, #messages, #social ul, #map, #instructors .col-5-6, nav ul {
+	nav.col-5-12, #home .wrapper div:nth-child(2) div, input, #services .col-1-6, #packages [class*="col-"], #instructors .col-1-2, section .col-1-2, footer .col-1-12, .col-1-3, .col-2-3, .col-1-7, .col-1-12, .col-1-4, footer .col-1-2, #about div.col-2-6, #about div.col-5-6, #about input, #about p, #about form.col-4-6, section.bg-lght-blue div.col-5-12, section.bg-lght-blue div.col-7-12, section.bg-lght-blue form input, #dropdown, #messages, #social ul, #map, #instructors .col-5-6, nav ul {
 		width: 100%;
 	}
 	
